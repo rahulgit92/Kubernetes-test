@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f /usr/src/app/media/uploads/docker-compose/92239b91-abd6-4f10-bdfc-0f4ec83b279c/ccee230a-fc4f-48b3-996a-5cc2788452d6.yaml
+    kompose.version: 1.18.0 (06a2e56)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mongo
+  name: mongo
+spec:
+  ports:
+  - name: "27017"
+    port: 27017
+  selector:
+    io.kompose.service: mongo
+status:
+  loadBalancer: {}

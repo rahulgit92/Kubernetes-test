@@ -1,0 +1,17 @@
+version: '2'
+services:
+    tomcat:
+       image: tomcatimage
+       ports:
+         - "80:8080"
+       volumes:
+          - ./logs/:/usr/local/tomcat/logs/
+       restart: always
+    mongodb: 
+       image: mongo
+       ports:
+         - "27017:27017"
+       enviornment: 
+         MONGO_INITDB_ROOT_USERNAME: root
+         MONGO_INITDB_ROOT_PASSWORD: password
+       restart: always
